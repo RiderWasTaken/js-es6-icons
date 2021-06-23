@@ -99,26 +99,14 @@ const icons = [
 
 const containerHTML = document.querySelector('.icons-content');
 
-/**
- * 
- * @param {*} choice 
- * @param {*} firstList 
- */
-function filterIcons(choice, firstList) {
-    return firstList.filter((item) => {
-        if (choice === 'all') {
-            return true;
-        }
-        if (choice === icon.type) {
-            return true;
-        }
-        return false;
-    });
+function filterToHtml (value = 'all') {
+	containerHTML.innerHTML = '';
+    let iconsOutput = icons;
+	if (value != 'all') {
+		iconsOutput = icons.filter( icon => icon.type == value );
 }
 
-function filterToHtml (filter) {
-    const iconsOutput = filterIcons(filter, icons);
-    iconsOutput.forEach((icon) => {
+iconsOutput.forEach((icon) => {
     const {name, prefix, family, type } = icon;
     containerHTML.innerHTML += `
         <div class="card col">
@@ -135,8 +123,10 @@ function filterToHtml (filter) {
 });
 }
 
-filterToHtml('all');
+document.addEventListener('DOMContentLoaded',  event => {
+	filterToHtml();
+});
 const itemChoice = document.querySelector ('.type-select');
-itemChoice.addEventListener('change', () => {
-    filterToHtml(event.target.value);
+itemChoice.addEventListener('change', event => {
+	filterToHtml(event.target.value);
 });
