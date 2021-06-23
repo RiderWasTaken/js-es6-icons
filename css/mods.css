@@ -1,0 +1,65 @@
+header h1 {
+    color: rgb(0, 183, 255);
+    height: 15%;
+}
+
+nav {
+    background-color: rgb(0, 183, 255);
+    height: 10%;
+}
+
+.icons-container {
+    background-color: #DDD;
+}
+
+.icons-content, .row {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card {
+    flex-basis: calc(100% / 5);
+    background-color: #DDD;
+    margin: 15px;
+    border: 0;
+}
+
+.card-inner {
+    border: 1px #CCC solid;
+    background-color: #FFF;
+    align-items: center;
+    text-align: center;
+    border-radius: 7px;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 15px;
+    height: 100px;
+}
+
+.card-inner .icon {
+    width: 100%;
+}
+
+.card-inner .name {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* --------colors-------- */
+
+.icon {
+    font-size: 25px;
+}
+
+.icon.animal {
+    color: blue;
+}
+
+.icon.vegetable {
+    color: orange;
+}
+
+.icon.user {
+    color: purple;
+}
